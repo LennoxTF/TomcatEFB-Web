@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Workspace\\Projekte\\TomcatEFB\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{77680D78-6A29-46E6-B685-58457A5839AC}|TomcatEFB.pyproj|C:\\Workspace\\Projekte\\TomcatEFB\\main.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{77680D78-6A29-46E6-B685-58457A5839AC}|TomcatEFB.pyproj|solutionrelative:main.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77680D78-6A29-46E6-B685-58457A5839AC}|TomcatEFB.pyproj|C:\\Workspace\\Projekte\\TomcatEFB\\calc.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{77680D78-6A29-46E6-B685-58457A5839AC}|TomcatEFB.pyproj|solutionrelative:calc.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "calc.py",
+              "DocumentMoniker": "C:\\Workspace\\Projekte\\TomcatEFB\\calc.py",
+              "RelativeDocumentMoniker": "calc.py",
+              "ToolTip": "C:\\Workspace\\Projekte\\TomcatEFB\\calc.py",
+              "RelativeToolTip": "calc.py",
+              "ViewState": "AgIAAHQAAAAAAAAAAAAIwJEAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-04-05T14:44:23.395Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "main.py",
+              "DocumentMoniker": "C:\\Workspace\\Projekte\\TomcatEFB\\main.py",
+              "RelativeDocumentMoniker": "main.py",
+              "ToolTip": "C:\\Workspace\\Projekte\\TomcatEFB\\main.py",
+              "RelativeToolTip": "main.py",
+              "ViewState": "AgIAAKAAAAAAAAAAAAAqwLwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-04-05T14:44:00.288Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
