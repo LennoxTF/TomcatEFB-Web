@@ -5,4 +5,6 @@ A simple tool to allow flightsim pilots to do some navigational calculation. The
 ## How to install?
 Just download the .exe and run it. No installation needed.
 
+## NOT INTENDED FOR REAL NAVIGATIONAL USE! USE IN FLIGHT SIMULATION ONLY!
+
 ## Licence: CC BY-NC-SA 4.0
