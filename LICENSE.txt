@@ -1,0 +1,18 @@
+Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)
+
+Copyright (c) 2025, David Binder
+
+This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) License.
+
+You may:
+- Copy, distribute, and transmit the work for non-commercial purposes.
+- Remix, transform, and build upon the work, provided that you distribute your contributions under the same license.
+
+The following conditions apply:
+- **Attribution**: You must give appropriate credit to the original author, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.
+- **Non-Commercial Use**: You may not use the material for commercial purposes.
+- **ShareAlike**: If you remix, transform, or build upon the material, you must distribute your contributions under the same license (CC BY-NC-SA 4.0).
+
+The material is licensed "as is", without any warranty, express or implied, including but not limited to the warranties of merchantability or fitness for a particular purpose.
+
+The full license is available at: https://creativecommons.org/licenses/by-nc-sa/4.0/
