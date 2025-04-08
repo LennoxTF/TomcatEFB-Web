@@ -9,6 +9,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{77680D78-6A29-46E6-B685-58457A5839AC}|TomcatEFB.pyproj|C:\\Workspace\\Projekte\\TomcatEFB\\calc.py||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{77680D78-6A29-46E6-B685-58457A5839AC}|TomcatEFB.pyproj|solutionrelative:calc.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77680D78-6A29-46E6-B685-58457A5839AC}|TomcatEFB.pyproj|C:\\Workspace\\Projekte\\TomcatEFB\\main_old.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{77680D78-6A29-46E6-B685-58457A5839AC}|TomcatEFB.pyproj|solutionrelative:main_old.py||{8B382828-6202-11D1-8870-0000F87579D2}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,21 +22,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "calc.py",
-              "DocumentMoniker": "C:\\Workspace\\Projekte\\TomcatEFB\\calc.py",
-              "RelativeDocumentMoniker": "calc.py",
-              "ToolTip": "C:\\Workspace\\Projekte\\TomcatEFB\\calc.py",
-              "RelativeToolTip": "calc.py",
-              "ViewState": "AgIAAHQAAAAAAAAAAAAIwJEAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-04-05T14:44:23.395Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -41,7 +32,33 @@
               "RelativeDocumentMoniker": "main.py",
               "ToolTip": "C:\\Workspace\\Projekte\\TomcatEFB\\main.py",
               "RelativeToolTip": "main.py",
-              "ViewState": "AgIAAKAAAAAAAAAAAAAqwLwAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAJEAAAAAAAAAAAAIwMIAAABQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-04-08T00:39:03.843Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "calc.py",
+              "DocumentMoniker": "C:\\Workspace\\Projekte\\TomcatEFB\\calc.py",
+              "RelativeDocumentMoniker": "calc.py",
+              "ToolTip": "C:\\Workspace\\Projekte\\TomcatEFB\\calc.py",
+              "RelativeToolTip": "calc.py",
+              "ViewState": "AgIAAI4AAAAAAAAAAAAIwKUAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-04-05T14:44:23.395Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "main_old.py",
+              "DocumentMoniker": "C:\\Workspace\\Projekte\\TomcatEFB\\main_old.py",
+              "RelativeDocumentMoniker": "main_old.py",
+              "ToolTip": "C:\\Workspace\\Projekte\\TomcatEFB\\main_old.py",
+              "RelativeToolTip": "main_old.py",
+              "ViewState": "AgIAANEAAAAAAAAAAAAAAE0AAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
               "WhenOpened": "2025-04-05T14:44:00.288Z",
               "EditorCaption": ""

@@ -144,3 +144,23 @@ def descent_profile(altitude_ft, ground_speed_kt, target_distance_nm):
         "top_of_descent_nm": round(target_distance_nm, 2),
         "time_to_descent_min": round(time_minutes, 1)
     }
+
+def endurance(fuel_lb, fuel_flow_lb_per_hour):
+    """
+    Calculate endurance (how long you can fly) based on remaining fuel and fuel flow.
+
+    Parameters:
+        fuel_lb (float): Remaining fuel in pounds.
+        fuel_flow_lb_per_hour (float): Fuel consumption in lb/h.
+
+    Returns:
+        str: Endurance in the format "Xh Ymin".
+    """
+    if fuel_flow_lb_per_hour <= 0:
+        raise ValueError("Fuel flow must be greater than 0.")
+        
+    endurance_hours = fuel_lb / fuel_flow_lb_per_hour
+    hours = int(endurance_hours)
+    minutes = int((endurance_hours - hours) * 60)
+
+    return f"{hours}h {minutes}min"
