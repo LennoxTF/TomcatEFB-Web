@@ -1,7 +1,7 @@
 ﻿import tkinter as tk
 from tkinter import ttk
 import math
-import calc  
+import calc
 
 class CalcApp:
     def __init__(self, root):
@@ -17,8 +17,9 @@ class CalcApp:
                   background=[("active", "#456")],
                   relief=[("pressed", "sunken")])
 
-        self.canvas = tk.Canvas(root, bg="#223")
-        self.scrollbar = ttk.Scrollbar(root, orient="vertical", command=self.canvas.yview)
+        self.scroll_canvas_frame = tk.Frame(root, bg="#223")
+        self.canvas = tk.Canvas(self.scroll_canvas_frame, bg="#223")
+        self.scrollbar = ttk.Scrollbar(self.scroll_canvas_frame, orient="vertical", command=self.canvas.yview)
         self.scrollable_frame = tk.Frame(self.canvas, bg="#223")
 
         self.scrollable_frame.bind(
@@ -31,6 +32,9 @@ class CalcApp:
 
         self.canvas.pack(side="left", fill="both", expand=True)
         self.scrollbar.pack(side="right", fill="y")
+        self.scroll_canvas_frame.pack(fill="both", expand=True)
+
+        self.flat_frame = tk.Frame(root, bg="#223")
 
         self.current_input = ""
         self.input_vars = []
@@ -50,7 +54,7 @@ class CalcApp:
                 "time_to_climb": (["Altitude Diff (ft)", "Climb Rate (ft/min)"], "min"),
                 "climb_rate": (["Altitude Diff (ft)", "Time (min)"], "ft/min"),
                 "top_of_descent": (["Altitude Diff (ft)", "Gradient (e.g. 3)"], "nm"),
-                "descent_angle3": (["Groundspeed (kt)"], "°"),
+                #"descent_angle3": (["Groundspeed (kt)"], "°"),
                 "descent_angle": (["Altitude Diff (ft)", "Distance (nm)"], "°"),
                 "descent_rate_req": (["Altitude Diff (ft)", "Distance (nm)", "GS (kt)"], "ft/min"),
                 "descent_profile": (["Altitude Diff (ft)", "GS (kt)", "Target Distance (nm)"], ""),
@@ -73,15 +77,29 @@ class CalcApp:
         }
 
         self.show_main_menu()
+        self.bind_scroll_events()
+
+    def bind_scroll_events(self):
+        # Windows + Linux
+        self.canvas.bind_all("<MouseWheel>", lambda e: self.canvas.yview_scroll(int(-1*(e.delta/120)), "units"))
+        # macOS
+        self.canvas.bind_all("<Button-4>", lambda e: self.canvas.yview_scroll(-1, "units"))
+        self.canvas.bind_all("<Button-5>", lambda e: self.canvas.yview_scroll(1, "units"))
+
 
     def clear_frame(self):
         for widget in self.scrollable_frame.winfo_children():
+            widget.destroy()
+        for widget in self.flat_frame.winfo_children():
             widget.destroy()
         self.current_input = ""
         self.input_vars.clear()
         self.input_entries.clear()
 
     def show_main_menu(self):
+        self.flat_frame.pack_forget()
+        self.scroll_canvas_frame.pack(fill="both", expand=True)
+
         self.clear_frame()
         title = tk.Label(self.scrollable_frame, text="Select a Calculation", font=("Segoe UI", 16, "bold"), bg="#223", fg="white")
         title.pack(pady=10)
@@ -98,6 +116,9 @@ class CalcApp:
                 btn.pack(pady=4)
 
     def show_input_screen(self, func_name):
+        self.scroll_canvas_frame.pack_forget()
+        self.flat_frame.pack(fill="both", expand=True)
+
         self.clear_frame()
 
         for category in self.functions.values():
@@ -107,13 +128,13 @@ class CalcApp:
                 unit = category[func_name][1]
                 break
 
-        tk.Label(self.scrollable_frame, text=f"Input: {func_name.replace('_', ' ').capitalize()}",
+        tk.Label(self.flat_frame, text=f"Input: {func_name.replace('_', ' ').capitalize()}",
                  font=("Segoe UI", 14), bg="#223", fg="white").pack(pady=10)
 
         for name in self.param_names:
             var = tk.StringVar()
             self.input_vars.append(var)
-            frame = tk.Frame(self.scrollable_frame, bg="#223")
+            frame = tk.Frame(self.flat_frame, bg="#223")
             frame.pack(pady=4)
             tk.Label(frame, text=name + ":", bg="#223", fg="white", font=("Segoe UI", 11)).pack(side="left")
             entry = tk.Entry(frame, textvariable=var, justify="right", font=("Segoe UI", 12), width=10)
@@ -126,12 +147,12 @@ class CalcApp:
 
         self.create_numpad()
 
-        btn_frame = tk.Frame(self.scrollable_frame, bg="#223")
+        btn_frame = tk.Frame(self.flat_frame, bg="#223")
         btn_frame.pack(pady=10)
         ttk.Button(btn_frame, text="Calculate", command=self.calculate).grid(row=0, column=0, padx=5)
         ttk.Button(btn_frame, text="Back", command=self.show_main_menu).grid(row=0, column=1, padx=5)
 
-        self.result_label = tk.Label(self.scrollable_frame, text="", font=("Segoe UI", 12), fg="lightblue", bg="#223")
+        self.result_label = tk.Label(self.flat_frame, text="", font=("Segoe UI", 12), fg="lightblue", bg="#223")
         self.result_label.pack(pady=10)
 
     def update_active_entry(self):
@@ -142,7 +163,7 @@ class CalcApp:
                 entry.config(highlightthickness=0)
 
     def create_numpad(self):
-        pad_frame = tk.Frame(self.scrollable_frame, bg="#223")
+        pad_frame = tk.Frame(self.flat_frame, bg="#223")
         pad_frame.pack(pady=10)
 
         buttons = [
@@ -150,7 +171,7 @@ class CalcApp:
             ["4", "5", "6"],
             ["1", "2", "3"],
             [".", "0", "Del"],
-            ["<", ">"]
+            [":", "<", ">"]
         ]
 
         for r, row in enumerate(buttons):
