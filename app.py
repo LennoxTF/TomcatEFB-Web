@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from flask import Flask, request, jsonify, render_template
 import calc
 
@@ -21,9 +22,9 @@ functions = {
         "descent_profile": ["Altitude Diff (ft)", "GS (kt)", "Target Distance (nm)"]
     },
     "Wind & Heading": {
-        "WCA": ["TAS (kt)", "Wind Angle (°)", "Wind Speed (kt)"],
-        "true_hdg": ["Track (°)", "WCA (°)"],
-        "mag_hdg": ["True Heading (°)", "Mag. Deviation (°)"]
+        "WCA": ["TAS (kt)", "Wind Angle (Â°)", "Wind Speed (kt)"],
+        "true_hdg": ["Track (Â°)", "WCA (Â°)"],
+        "mag_hdg": ["True Heading (Â°)", "Mag. Deviation (Â°)"]
     },
     "Fuel & Range": {
         "fuel_per_nm": ["GS (kt)", "Fuel Flow (lb/h)"],
@@ -33,7 +34,7 @@ functions = {
     },
     "Temperature / ISA": {
         "isa_temperature": ["Altitude (ft)"],
-        "isa_deviation": ["Current Temp (°C)", "Altitude (ft)"]
+        "isa_deviation": ["Current Temp (Â°C)", "Altitude (ft)"]
     }
 }
 
