@@ -1,0 +1,8 @@
+# render.yaml
+services:
+  - type: web
+    name: flight-calc
+    env: python
+    plan: free
+    buildCommand: ""
+    startCommand: "python app.py"
