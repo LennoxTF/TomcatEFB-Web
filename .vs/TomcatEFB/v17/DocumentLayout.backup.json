@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "C:\\Workspace\\Projekte\\TomcatEFB\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{77680D78-6A29-46E6-B685-58457A5839AC}|TomcatEFB.pyproj|C:\\Workspace\\Projekte\\TomcatEFB\\main.py||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{77680D78-6A29-46E6-B685-58457A5839AC}|TomcatEFB.pyproj|solutionrelative:main.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{77680D78-6A29-46E6-B685-58457A5839AC}|TomcatEFB.pyproj|C:\\Workspace\\Projekte\\TomcatEFB\\app.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{77680D78-6A29-46E6-B685-58457A5839AC}|TomcatEFB.pyproj|solutionrelative:app.py||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{77680D78-6A29-46E6-B685-58457A5839AC}|TomcatEFB.pyproj|C:\\Workspace\\Projekte\\TomcatEFB\\calc.py||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{77680D78-6A29-46E6-B685-58457A5839AC}|TomcatEFB.pyproj|solutionrelative:calc.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77680D78-6A29-46E6-B685-58457A5839AC}|TomcatEFB.pyproj|C:\\Workspace\\Projekte\\TomcatEFB\\main.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{77680D78-6A29-46E6-B685-58457A5839AC}|TomcatEFB.pyproj|solutionrelative:main.py||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{77680D78-6A29-46E6-B685-58457A5839AC}|TomcatEFB.pyproj|C:\\Workspace\\Projekte\\TomcatEFB\\main_old.py||{8B382828-6202-11D1-8870-0000F87579D2}",
@@ -27,12 +31,25 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "app.py",
+              "DocumentMoniker": "C:\\Workspace\\Projekte\\TomcatEFB\\app.py",
+              "RelativeDocumentMoniker": "app.py",
+              "ToolTip": "C:\\Workspace\\Projekte\\TomcatEFB\\app.py",
+              "RelativeToolTip": "app.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-04-10T21:10:26.144Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "main.py",
               "DocumentMoniker": "C:\\Workspace\\Projekte\\TomcatEFB\\main.py",
               "RelativeDocumentMoniker": "main.py",
               "ToolTip": "C:\\Workspace\\Projekte\\TomcatEFB\\main.py",
               "RelativeToolTip": "main.py",
-              "ViewState": "AgIAANUAAAAAAAAAAAAAACMAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
               "WhenOpened": "2025-04-08T00:39:03.843Z",
               "EditorCaption": ""
@@ -45,13 +62,14 @@
               "RelativeDocumentMoniker": "calc.py",
               "ToolTip": "C:\\Workspace\\Projekte\\TomcatEFB\\calc.py",
               "RelativeToolTip": "calc.py",
-              "ViewState": "AgIAAI4AAAAAAAAAAAAIwKUAAAAjAAAAAAAAAA==",
+              "ViewState": "AgIAAI0AAAAAAAAAAAAAAKUAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-04-05T14:44:23.395Z"
+              "WhenOpened": "2025-04-05T14:44:23.395Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "main_old.py",
               "DocumentMoniker": "C:\\Workspace\\Projekte\\TomcatEFB\\main_old.py",
               "RelativeDocumentMoniker": "main_old.py",
@@ -59,7 +77,8 @@
               "RelativeToolTip": "main_old.py",
               "ViewState": "AgIAANEAAAAAAAAAAAAAAE0AAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-04-05T14:44:00.288Z"
+              "WhenOpened": "2025-04-05T14:44:00.288Z",
+              "EditorCaption": ""
             }
           ]
         }
