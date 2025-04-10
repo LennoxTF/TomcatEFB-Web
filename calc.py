@@ -1,4 +1,5 @@
-﻿import math
+# -*- coding: utf-8 -*-
+import math
 from datetime import datetime
 
 def groundspeed(dist, time):
