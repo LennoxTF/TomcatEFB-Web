@@ -8,13 +8,23 @@
         body {
             background-color: #1b1b2f;
             color: white;
+            display: flex;
+            justify-content: center;
             padding: 2rem;
         }
+
+        .page {
+            max-width: 794px;
+            width: 100%;
+            background-color: #1b1b2f;
+        }
+
         .form-control, .form-select {
             background-color: #2c2c3f;
             color: white;
             border: 1px solid #444;
         }
+
         .result-box {
             background-color: #2c2c3f;
             border: 1px solid #444;
@@ -22,10 +32,31 @@
             margin-top: 1rem;
             border-radius: 0.5rem;
         }
+
+        .numpad {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+            .numpad button {
+                background-color: #444;
+                color: white;
+                border: none;
+                padding: 1rem;
+                font-size: 1.2rem;
+                border-radius: 0.5rem;
+                cursor: pointer;
+            }
+
+                .numpad button:hover {
+                    background-color: #666;
+                }
     </style>
 </head>
 <body>
-    <div class="container">
+    <div class="page">
         <h1 class="mb-4">Tomcat Flight Calculator</h1>
 
         <div class="mb-3">
@@ -33,7 +64,7 @@
             <select id="category" class="form-select" onchange="updateFunctionList()">
                 <option disabled selected>Select a category</option>
                 {% for cat in functions.keys() %}
-                    <option value="{{ cat }}">{{ cat }}</option>
+                <option value="{{ cat }}">{{ cat }}</option>
                 {% endfor %}
             </select>
         </div>
@@ -47,75 +78,129 @@
 
         <div id="inputs" class="mb-3"></div>
 
-        <button class="btn btn-primary" onclick="sendCalculation()">Calculate</button>
+        <div class="numpad">
+            <button onclick="numpadInput('7')">7</button>
+            <button onclick="numpadInput('8')">8</button>
+            <button onclick="numpadInput('9')">9</button>
+            <button onclick="navigateInputs(-1)">←</button>
+
+            <button onclick="numpadInput('4')">4</button>
+            <button onclick="numpadInput('5')">5</button>
+            <button onclick="numpadInput('6')">6</button>
+            <button onclick="navigateInputs(1)">→</button>
+
+            <button onclick="numpadInput('1')">1</button>
+            <button onclick="numpadInput('2')">2</button>
+            <button onclick="numpadInput('3')">3</button>
+            <button onclick="numpadInput(':')">:</button>
+
+            <button onclick="numpadInput(',')">,</button>
+            <button onclick="numpadInput('0')">0</button>
+            <button onclick="deleteInput()">⌫</button>
+            <button onclick="sendCalculation()">=</button>
+        </div>
 
         <div id="result" class="result-box mt-3" style="display:none;"></div>
     </div>
 
     <script>
-        const functionData = {{ functions|tojson }};
-        let currentFunction = "";
+    const functionData = {{ functions|tojson }};
+    let currentFunction = "";
+    let inputElements = [];
+    let currentInputIndex = 0;
 
-        function updateFunctionList() {
-            const category = document.getElementById("category").value;
-            const functionSelect = document.getElementById("function");
-            functionSelect.innerHTML = '<option disabled selected>Select a function</option>';
+    function updateFunctionList() {
+        const category = document.getElementById("category").value;
+        const functionSelect = document.getElementById("function");
+        functionSelect.innerHTML = '<option disabled selected>Select a function</option>';
 
-            Object.keys(functionData[category]).forEach(fn => {
-                const opt = document.createElement("option");
-                opt.value = fn;
-                opt.innerText = fn.replaceAll('_', ' ');
-                functionSelect.appendChild(opt);
-            });
+        Object.keys(functionData[category]).forEach(fn => {
+            const opt = document.createElement("option");
+            opt.value = fn;
+            opt.innerText = fn.replaceAll('_', ' ');
+            functionSelect.appendChild(opt);
+        });
 
-            document.getElementById("inputs").innerHTML = "";
-            document.getElementById("result").style.display = "none";
+        document.getElementById("inputs").innerHTML = "";
+        document.getElementById("result").style.display = "none";
+    }
+
+    function buildInputs() {
+        const category = document.getElementById("category").value;
+        const fn = document.getElementById("function").value;
+        currentFunction = fn;
+        const inputArea = document.getElementById("inputs");
+        inputArea.innerHTML = "";
+
+        const labels = functionData[category][fn];
+        labels.forEach((label, i) => {
+            const div = document.createElement("div");
+            div.className = "mb-2";
+            div.innerHTML = `<label class="form-label">${label}</label><input type="text" class="form-control" id="input${i}" onfocus="setCurrentInput(${i})">`;
+            inputArea.appendChild(div);
+        });
+
+        inputElements = document.querySelectorAll("#inputs input");
+        if (inputElements.length > 0) {
+            inputElements[0].focus();
+            currentInputIndex = 0;
         }
 
-        function buildInputs() {
-            const category = document.getElementById("category").value;
-            const fn = document.getElementById("function").value;
-            currentFunction = fn;
-            const inputArea = document.getElementById("inputs");
-            inputArea.innerHTML = "";
+        document.getElementById("result").style.display = "none";
+    }
 
-            const labels = functionData[category][fn];
-            labels.forEach((label, i) => {
-                const div = document.createElement("div");
-                div.className = "mb-2";
-                div.innerHTML = `<label class="form-label">${label}</label><input type="text" class="form-control" id="input${i}">`;
-                inputArea.appendChild(div);
-            });
+    function setCurrentInput(index) {
+        currentInputIndex = index;
+    }
 
-            document.getElementById("result").style.display = "none";
-        }
+    function numpadInput(value) {
+        if (inputElements.length === 0) return;
+        const el = inputElements[currentInputIndex];
+        el.value += value;
+        el.focus();
+    }
 
-        async function sendCalculation() {
-            const inputs = document.querySelectorAll("#inputs input");
-            const args = Array.from(inputs).map(el => el.value);
+    function deleteInput() {
+        if (inputElements.length === 0) return;
+        const el = inputElements[currentInputIndex];
+        el.value = el.value.slice(0, -1);
+        el.focus();
+    }
 
-            const response = await fetch("/api/calculate", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({ function: currentFunction, args })
-            });
+    function navigateInputs(direction) {
+        if (inputElements.length === 0) return;
+        currentInputIndex += direction;
+        if (currentInputIndex < 0) currentInputIndex = 0;
+        if (currentInputIndex >= inputElements.length) currentInputIndex = inputElements.length - 1;
+        inputElements[currentInputIndex].focus();
+    }
 
-            const data = await response.json();
-            const resultBox = document.getElementById("result");
-            resultBox.style.display = "block";
+    async function sendCalculation() {
+        const inputs = document.querySelectorAll("#inputs input");
+        const args = Array.from(inputs).map(el => el.value);
 
-            if (data.result) {
-                if (typeof data.result === 'object') {
-                    resultBox.innerHTML = "<strong>Result:</strong><br>" + Object.entries(data.result).map(([k, v]) => `<div>${k.replaceAll('_', ' ')}: ${v}</div>`).join('');
-                } else {
-                    resultBox.innerHTML = `<strong>Result:</strong> ${data.result}`;
-                }
+        const response = await fetch("/api/calculate", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ function: currentFunction, args })
+        });
+
+        const data = await response.json();
+        const resultBox = document.getElementById("result");
+        resultBox.style.display = "block";
+
+        if (data.result) {
+            if (typeof data.result === 'object') {
+                resultBox.innerHTML = "<strong>Result:</strong><br>" + Object.entries(data.result).map(([k, v]) => `<div>${k.replaceAll('_', ' ')}: ${v}</div>`).join('');
             } else {
-                resultBox.innerHTML = `<strong>Error:</strong> ${data.error}`;
+                resultBox.innerHTML = `<strong>Result:</strong> ${data.result}`;
             }
+        } else {
+            resultBox.innerHTML = `<strong>Error:</strong> ${data.error}`;
         }
+    }
     </script>
 </body>
 </html>

@@ -1,17 +1,29 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Workspace\\Projekte\\TomcatEFB\\",
+  "WorkspaceRootPath": "C:\\Workspace\\Projekte\\Tomcat EFB\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{77680D78-6A29-46E6-B685-58457A5839AC}|TomcatEFB.pyproj|C:\\Workspace\\Projekte\\TomcatEFB\\main.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "AbsoluteMoniker": "D:0:0:{77680D78-6A29-46E6-B685-58457A5839AC}|TomcatEFB.pyproj|C:\\Workspace\\Projekte\\Tomcat EFB\\templates\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{77680D78-6A29-46E6-B685-58457A5839AC}|TomcatEFB.pyproj|solutionrelative:templates\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77680D78-6A29-46E6-B685-58457A5839AC}|TomcatEFB.pyproj|C:\\Workspace\\Projekte\\Tomcat EFB\\templates\\requirements.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{77680D78-6A29-46E6-B685-58457A5839AC}|TomcatEFB.pyproj|solutionrelative:templates\\requirements.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77680D78-6A29-46E6-B685-58457A5839AC}|TomcatEFB.pyproj|C:\\Workspace\\Projekte\\Tomcat EFB\\app.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{77680D78-6A29-46E6-B685-58457A5839AC}|TomcatEFB.pyproj|solutionrelative:app.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77680D78-6A29-46E6-B685-58457A5839AC}|TomcatEFB.pyproj|C:\\Workspace\\Projekte\\Tomcat EFB\\main.py||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{77680D78-6A29-46E6-B685-58457A5839AC}|TomcatEFB.pyproj|solutionrelative:main.py||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{77680D78-6A29-46E6-B685-58457A5839AC}|TomcatEFB.pyproj|C:\\Workspace\\Projekte\\TomcatEFB\\calc.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "AbsoluteMoniker": "D:0:0:{77680D78-6A29-46E6-B685-58457A5839AC}|TomcatEFB.pyproj|C:\\Workspace\\Projekte\\Tomcat EFB\\calc.py||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{77680D78-6A29-46E6-B685-58457A5839AC}|TomcatEFB.pyproj|solutionrelative:calc.py||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{77680D78-6A29-46E6-B685-58457A5839AC}|TomcatEFB.pyproj|C:\\Workspace\\Projekte\\TomcatEFB\\main_old.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "AbsoluteMoniker": "D:0:0:{77680D78-6A29-46E6-B685-58457A5839AC}|TomcatEFB.pyproj|C:\\Workspace\\Projekte\\Tomcat EFB\\main_old.py||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{77680D78-6A29-46E6-B685-58457A5839AC}|TomcatEFB.pyproj|solutionrelative:main_old.py||{8B382828-6202-11D1-8870-0000F87579D2}"
     }
   ],
@@ -22,28 +34,65 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "main.py",
-              "DocumentMoniker": "C:\\Workspace\\Projekte\\TomcatEFB\\main.py",
-              "RelativeDocumentMoniker": "main.py",
-              "ToolTip": "C:\\Workspace\\Projekte\\TomcatEFB\\main.py",
-              "RelativeToolTip": "main.py",
-              "ViewState": "AgIAANUAAAAAAAAAAAAAACMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-04-08T00:39:03.843Z",
+              "DocumentIndex": 1,
+              "Title": "requirements.txt",
+              "DocumentMoniker": "C:\\Workspace\\Projekte\\Tomcat EFB\\templates\\requirements.txt",
+              "RelativeDocumentMoniker": "templates\\requirements.txt",
+              "ToolTip": "C:\\Workspace\\Projekte\\Tomcat EFB\\templates\\requirements.txt",
+              "RelativeToolTip": "templates\\requirements.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2025-04-12T09:21:41.037Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
+              "Title": "app.py",
+              "DocumentMoniker": "C:\\Workspace\\Projekte\\Tomcat EFB\\app.py",
+              "RelativeDocumentMoniker": "app.py",
+              "ToolTip": "C:\\Workspace\\Projekte\\Tomcat EFB\\app.py",
+              "RelativeToolTip": "app.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-04-12T09:20:04.568Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "index.html",
+              "DocumentMoniker": "C:\\Workspace\\Projekte\\Tomcat EFB\\templates\\index.html",
+              "RelativeDocumentMoniker": "templates\\index.html",
+              "ToolTip": "C:\\Workspace\\Projekte\\Tomcat EFB\\templates\\index.html",
+              "RelativeToolTip": "templates\\index.html",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAM4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-04-12T09:19:27.78Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "main.py",
+              "DocumentMoniker": "C:\\Workspace\\Projekte\\Tomcat EFB\\main.py",
+              "RelativeDocumentMoniker": "main.py",
+              "ToolTip": "C:\\Workspace\\Projekte\\Tomcat EFB\\main.py",
+              "RelativeToolTip": "main.py",
+              "ViewState": "AgIAANUAAAAAAAAAAAAAACMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-04-08T00:39:03.843Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "calc.py",
-              "DocumentMoniker": "C:\\Workspace\\Projekte\\TomcatEFB\\calc.py",
+              "DocumentMoniker": "C:\\Workspace\\Projekte\\Tomcat EFB\\calc.py",
               "RelativeDocumentMoniker": "calc.py",
-              "ToolTip": "C:\\Workspace\\Projekte\\TomcatEFB\\calc.py",
+              "ToolTip": "C:\\Workspace\\Projekte\\Tomcat EFB\\calc.py",
               "RelativeToolTip": "calc.py",
               "ViewState": "AgIAAI4AAAAAAAAAAAAIwKUAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
@@ -51,11 +100,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "main_old.py",
-              "DocumentMoniker": "C:\\Workspace\\Projekte\\TomcatEFB\\main_old.py",
+              "DocumentMoniker": "C:\\Workspace\\Projekte\\Tomcat EFB\\main_old.py",
               "RelativeDocumentMoniker": "main_old.py",
-              "ToolTip": "C:\\Workspace\\Projekte\\TomcatEFB\\main_old.py",
+              "ToolTip": "C:\\Workspace\\Projekte\\Tomcat EFB\\main_old.py",
               "RelativeToolTip": "main_old.py",
               "ViewState": "AgIAANEAAAAAAAAAAAAAAE0AAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",

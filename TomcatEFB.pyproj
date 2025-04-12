@@ -21,9 +21,18 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="app.py" />
     <Compile Include="main.py" />
     <Compile Include="main_old.py" />
     <Compile Include="calc.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="render.yaml" />
+    <Content Include="templates\index.html" />
+    <Content Include="templates\requirements.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="templates\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
