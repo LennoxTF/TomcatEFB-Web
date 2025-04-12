@@ -93,7 +93,7 @@ def isa_temperature(altitude):
     return f"{15 - (altitude / 1000 * 2):.1f} deg C"
 
 def isa_deviation(actual_temp, altitude):
-    return f"{actual_temp - isa_temperature(altitude)}:.1f} deg C"
+    return f"{actual_temp - isa_temperature(altitude):.1f} deg C"
 
 def fuel_at_fix(current_fuel, speed, fuel_rate, distance):
     # Treibstoff nach Flug zum Fix (alles in kt, lbs/h, NM)
