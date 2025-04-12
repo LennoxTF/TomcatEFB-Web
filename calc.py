@@ -5,17 +5,17 @@ from datetime import datetime
 def groundspeed(dist, time):
     # dist in NM, time in h → speed in kt (NM/h)
     groundspeed = dist / time
-    return groundspeed
+    return f"{groundspeed:.1f} kt"
 
 def time_to_dest(dist, speed):
     # dist in NM, speed in kt → time in h
     time = dist / speed
-    return time
+    return f"{time:.1f} h"
 
 def distance(speed, time):
     # speed in kt, time in h → distance in NM
     distance = speed * time
-    return distance
+    return f"{distance:.1f} NM"
 
 def WCA(tas, angle, windspeed):
     # tas in kt, windspeed in kt, angle in degrees (between wind dir and desired track)
@@ -25,60 +25,60 @@ def WCA(tas, angle, windspeed):
     ratio = max(min(ratio, 1), -1)
     wca_rad = math.asin(ratio)
     wca_deg = math.degrees(wca_rad)
-    return wca_deg
+    return f"{wca_deg:.1f} deg"
 
 def true_hdg(track, wca):
     # track and wca in degrees → result in degrees
     true_hdg = track + wca
-    return true_hdg
+    return f"{true_hdg:.1f} deg"
 
 def mag_hdg(true_hdg, declination):
     # true_hdg and declination in degrees
     mag_hdg = true_hdg - declination
-    return mag_hdg
+    return f"{mag_hdg:.1f} deg"
 
 def fuel_per_nm(speed, fuel_rate):
     # speed in kt (NM/h), fuel_rate in lbs/h → result in lbs/NM
     fuel_per_nm = fuel_rate / speed
-    return fuel_per_nm
+    return f"{fuel_per_nm:.1f} lbs/NM"
 
 def ranges(fuel, fuel_rate, speed):
     # fuel in lbs, fuel_rate in lbs/h, speed in kt → result in NM
     ranges = (fuel / fuel_rate) * speed
-    return ranges
+    return f"{ranges:.1f} NM"
 
 def time_to_climb(altitude, rate_of_climb):
     # altitude in ft, rate_of_climb in ft/min → result in minutes
     time_to_climb = altitude / rate_of_climb
-    return time_to_climb
+    return f"{time_to_climb:.1f} min"
 
 def climb_rate(altitude, time):
     # altitude in ft, time in min → result in ft/min
     rate_of_climb = altitude / time
-    return rate_of_climb
+    return f"{rate_of_climb:.1f} ft/min"
 
 def ETA(distance, speed):
     # distance in NM, speed in kt → result in h
     eta = distance / speed
-    return eta
+    return f"{eta:.1f} h"
 
 def top_of_descent(altitude, nm_per_1000ft):
     # altitude in ft, nm_per_1000ft typical value = 3 for 3° path
     tod = (altitude / 1000) * nm_per_1000ft
-    return tod
+    return f"{tod:.1f} NM"
 
 def descent_angle3(speed):
     # Placeholder – real descent angle depends on geometry, not just speed
     # Here we return the commonly used formula for a 3° glide path:
     descent_angle = 3  # degrees – standard approach angle
-    return descent_angle
+    return f"{descent_angle:.1f} deg"
 
 def descent_angle(altitude, distance):
     # altitude in ft, distance in NM → convert NM to ft
     distance_ft = distance * 6076.12
     descent_angle_rad = math.atan(altitude / distance_ft)
     descent_angle_deg = math.degrees(descent_angle_rad)
-    return descent_angle_deg
+    return f"{descent_angle3:.1f} deg"
 
 def descent_rate_req(altitude, distance, speed):
     # altitude in ft, distance in NM, speed in kt (NM/h)
@@ -86,20 +86,20 @@ def descent_rate_req(altitude, distance, speed):
     # descent_rate in ft/min
     nm_per_min = speed / 60
     descent_rate = (altitude / distance) * nm_per_min
-    return descent_rate
+    return f"{descent_rate:.1f} NM/h"
 
 def isa_temperature(altitude):
     # altitude in ft → ISA Temp in °C
-    return 15 - (altitude / 1000 * 2)
+    return f"{15 - (altitude / 1000 * 2):.1f} deg C"
 
 def isa_deviation(actual_temp, altitude):
-    return actual_temp - isa_temperature(altitude)
+    return f"{actual_temp - isa_temperature(altitude)}:.1f} deg C"
 
 def fuel_at_fix(current_fuel, speed, fuel_rate, distance):
     # Treibstoff nach Flug zum Fix (alles in kt, lbs/h, NM)
     time = distance / speed  # h
     fuel_used = fuel_rate * time
-    return current_fuel - fuel_used
+    return f"{current_fuel - fuel_used:.1f} lbs"
 
 def required_groundspeed_to_waypoint(distance_nm, current_time_str, target_time_str):
     """
@@ -122,7 +122,7 @@ def required_groundspeed_to_waypoint(distance_nm, current_time_str, target_time_
 
     time_hours = delta_seconds / 3600
     required_speed = distance_nm / time_hours
-    return required_speed
+    return f"{required_speed:.1f} kt"
 
 def descent_profile(altitude_ft, ground_speed_kt, target_distance_nm):
     """
