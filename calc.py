@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import math
 from datetime import datetime
+from token import MINUS
 
 def groundspeed(dist, time):
     # dist in NM, time in h → speed in kt (NM/h)
@@ -10,7 +11,10 @@ def groundspeed(dist, time):
 def time_to_dest(dist, speed):
     # dist in NM, speed in kt → time in h
     time = dist / speed
-    return f"{time:.1f} h"
+    hours = int(time)
+    minutes = (time * 60) % 60
+    seconds = (time * 3600) % 60
+    return f"{hours}h {minutes}m {seconds}s"
 
 def distance(speed, time):
     # speed in kt, time in h → distance in NM
