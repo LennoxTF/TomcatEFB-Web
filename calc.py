@@ -64,7 +64,10 @@ def climb_rate(altitude, time):
 def ETA(distance, speed):
     # distance in NM, speed in kt → result in h
     eta = distance / speed
-    return f"{eta:.1f} h"
+    hours = int(eta)
+    minutes = int((eta * 60) % 60)
+    seconds = int((eta * 3600) % 60)
+    return f"{hours}h {minutes}m {seconds}s"
 
 def top_of_descent(altitude, nm_per_1000ft):
     # altitude in ft, nm_per_1000ft typical value = 3 for 3° path
